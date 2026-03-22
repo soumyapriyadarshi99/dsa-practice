@@ -7,16 +7,21 @@ public class DPClimbingStairLeetcode70 {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter no of stares: ");
 		int stare = sc.nextInt();
-		System.out.println(findStep(stare));
+		int[] memo = new int [stare+1];
+		System.out.println(findStep(stare,memo));
 	}
 	
-	public static int findStep(int n) {
+	public static int findStep(int n, int[] memo) {
 		if(n<=1) {
 			return 1;
 		}
-		int step1=findStep(n-1);
-		int step2=findStep(n-2);
-		return step1+step2;
+		if(memo[n] !=0) {
+			return memo[n];
+		}
+		int step1=findStep(n-1,memo);
+		int step2=findStep(n-2,memo);
+		memo[n] = step1+step2;
+		return memo[n];
 	}
 
 }
