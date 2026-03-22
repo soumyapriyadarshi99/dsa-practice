@@ -1,4 +1,4 @@
-package dsa;
+package recursion;
 
 public class MultiplyRecur {
 	public static int getMultiplicationValue(int a, int b) {

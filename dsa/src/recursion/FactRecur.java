@@ -1,4 +1,4 @@
-package dsa;
+package recursion;
 
 public class FactRecur {
 	public static int getFactorial(int n) {
